@@ -37,7 +37,7 @@ module.exports = yeoman.generators.Base.extend({
     },
 
     writing: {
-        app: function () {
+        dependancies: function () {
             this.fs.copy(
                 this.templatePath('src/_package.json'),
                 this.destinationPath('src/' + this.props.appName + '/package.json')
@@ -87,12 +87,31 @@ module.exports = yeoman.generators.Base.extend({
                     title: this.props.appName
                 }
             );
+            this.fs.copyTpl(
+                this.templatePath('src/_Project.kproj'),
+                this.destinationPath('src/' + this.props.appName + '/' + this.props.appName + '.kproj'), {
+                    title: this.props.appName
+                }
+            );
         },
 
         buildtool: function () {
             this.fs.copy(
                 this.templatePath('src/_Gruntfile.js'),
-                this.destinationPath('src/Gruntfile.js')
+                this.destinationPath('src/' + this.props.appName + '/Gruntfile.js')
+            );
+        },
+
+        client: function () {
+            this.fs.copyTpl(
+                this.templatePath('src/client/_index.html'),
+                this.destinationPath('src/' + this.props.appName 'Client/index.html'), {
+                    title: this.props.appName
+                }
+            );
+            this.fs.copy(
+                this.templatePath('src/client/assets/images/yeoman.png'),
+                this.destinationPath('src/' + this.props.appName + 'Client/Assets/Images/yeoman.png')
             );
         }
     },
