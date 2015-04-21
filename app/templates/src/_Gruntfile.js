@@ -268,6 +268,18 @@ module.exports = function (grunt) {
                 cwd: '<%= yeoman.app %>/styles',
                 dest: '<%= yeoman.temp %>/styles/',
                 src: '{,*/}*.css'
+            },
+            app: {
+                expand: true,
+                cwd: '<%= yeoman.app %>/App',
+                dest: '<%= yeoman.dist %>/App',
+                src: '**/*'
+            },
+            bower: {
+                expand: true,
+                cwd: './bower_components',
+                dest: '<%= yeoman.dist %>/bower_components',
+                src: '**/*.js'
             }
         },
 
@@ -331,8 +343,11 @@ module.exports = function (grunt) {
             }
         },
 
-        ngtemplates:  {
+        ngtemplates: {
             app: {
+                options: {
+                    module: '<%= title %>'
+                },
                 cwd: '<%= yeoman.app %>',
                 src: ['**/*.html', '!index.html'],
                 dest: '<%= yeoman.temp %>/templates.js'
@@ -393,8 +408,29 @@ module.exports = function (grunt) {
         'uglify',
         'filerev',
         'usemin',
-        'htmlmin'
+        'htmlmin',
+        'clean:server'
     ]);
+
+    grunt.registerTask('lite-build', [
+        'clean:dist',
+        'wiredep',
+        'injector:dist',
+        'ngtemplates',
+        'useminPrepare',
+        //'concurrent:dist',
+        //'compass:dist',
+        'autoprefixer',
+        'concat',
+        'concat:templates',
+        'ngAnnotate',
+        'copy:dist',
+        'copy:app',
+        'copy:bower',
+        'cdnify',
+        'clean:server'
+    ]);
+
 
     grunt.registerTask('default', [
       //'newer:jshint',

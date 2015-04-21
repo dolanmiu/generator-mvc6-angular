@@ -18,8 +18,8 @@
         "angular-mocks": "^1.3.0"
     },
     "exportsOverride": {},
-    "appPath": "app",
-    "moduleName": "ProjectDiamond",
+    "appPath": "<%= title %>",
+    "moduleName": "<%= title %>",
     "resolutions": {
         "angular": "~1.3.4"
     }

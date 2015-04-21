@@ -77,9 +77,11 @@ module.exports = yeoman.generators.Base.extend({
                 this.templatePath('_README.md'),
                 this.destinationPath('README.md')
             );
-            this.fs.copy(
+            this.fs.copyTpl(
                 this.templatePath('src/_Startup.cs'),
-                this.destinationPath('src/' + this.props.appName + '/Startup.cs')
+                this.destinationPath('src/' + this.props.appName + '/Startup.cs'), {
+                    title: this.props.appName
+                }
             );
             this.fs.copyTpl(
                 this.templatePath('_Solution.sln'),
@@ -96,9 +98,11 @@ module.exports = yeoman.generators.Base.extend({
         },
 
         buildtool: function () {
-            this.fs.copy(
+            this.fs.copyTpl(
                 this.templatePath('src/_Gruntfile.js'),
-                this.destinationPath('src/' + this.props.appName + '/Gruntfile.js')
+                this.destinationPath('src/' + this.props.appName + '/Gruntfile.js'), {
+                    title: this.props.appName
+                }
             );
         },
 
