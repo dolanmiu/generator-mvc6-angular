@@ -73,10 +73,6 @@ module.exports = yeoman.generators.Base.extend({
                 this.templatePath('gitignore'),
                 this.destinationPath('.gitignore')
             );
-            this.fs.copy(
-                this.templatePath('_README.md'),
-                this.destinationPath('README.md')
-            );
             this.fs.copyTpl(
                 this.templatePath('src/_Startup.cs'),
                 this.destinationPath('src/' + this.props.appName + '/Startup.cs'), {
