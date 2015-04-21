@@ -105,18 +105,52 @@ module.exports = yeoman.generators.Base.extend({
         client: function () {
             this.fs.copyTpl(
                 this.templatePath('src/client/_index.html'),
-                this.destinationPath('src/' + this.props.appName 'Client/index.html'), {
+                this.destinationPath('src/' + this.props.appName + '/Client/index.html'), {
                     title: this.props.appName
                 }
             );
             this.fs.copy(
-                this.templatePath('src/client/assets/images/yeoman.png'),
-                this.destinationPath('src/' + this.props.appName + 'Client/Assets/Images/yeoman.png')
+                this.templatePath('src/client/assets/images/_yeoman.png'),
+                this.destinationPath('src/' + this.props.appName + '/Client/Assets/Images/yeoman.png')
+            );
+            this.fs.copy(
+                this.templatePath('src/client/app/main/_main.html'),
+                this.destinationPath('src/' + this.props.appName + '/Client/App/Main/main.html')
+            );
+            this.fs.copyTpl(
+                this.templatePath('src/client/app/main/_main.controller.js'),
+                this.destinationPath('src/' + this.props.appName + '/Client/App/Main/main.controller.js'), {
+                    title: this.props.appName
+                }
+            );
+            this.fs.copyTpl(
+                this.templatePath('src/client/app/_index.js'),
+                this.destinationPath('src/' + this.props.appName + '/Client/App/index.js'), {
+                    title: this.props.appName
+                }
+            );
+            this.fs.copyTpl(
+                this.templatePath('src/client/app/components/navbar/_navbar.controller.js'),
+                this.destinationPath('src/' + this.props.appName + '/Client/App/Components/Navbar/navbar.controller.js'), {
+                    title: this.props.appName
+                }
+            );
+            this.fs.copyTpl(
+                this.templatePath('src/client/app/components/navbar/_navbar.html'),
+                this.destinationPath('src/' + this.props.appName + '/Client/App/Components/Navbar/navbar.html'), {
+                    title: this.props.appName
+                }
+            );
+            this.fs.copy(
+                this.templatePath('src/client/app/components/footer/_footer.html'),
+                this.destinationPath('src/' + this.props.appName + '/Client/App/Components/Footer/footer.html')
             );
         }
     },
 
     install: function () {
-        //this.installDependencies();
+        var npmdir = 'src/' + this.props.appName;
+        process.chdir(npmdir);
+        this.installDependencies();
     }
 });
