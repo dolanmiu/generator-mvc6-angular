@@ -25,7 +25,8 @@ module.exports = function (grunt) {
     var appConfig = {
         app: 'Client',
         dist: 'wwwroot',
-        temp: '.tmp'
+        temp: '.tmp',
+        title: require('./bower.json').appPath || 'app',
     };
 
     // configure plugins
@@ -346,7 +347,7 @@ module.exports = function (grunt) {
         ngtemplates: {
             app: {
                 options: {
-                    module: '<%= title %>'
+                    module: '<%= yeoman.title %>'
                 },
                 cwd: '<%= yeoman.app %>',
                 src: ['**/*.html', '!index.html'],

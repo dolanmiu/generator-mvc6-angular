@@ -94,11 +94,9 @@ module.exports = yeoman.generators.Base.extend({
         },
 
         buildtool: function () {
-            this.fs.copyTpl(
+            this.fs.copy(
                 this.templatePath('src/_Gruntfile.js'),
-                this.destinationPath('src/' + this.props.appName + '/Gruntfile.js'), {
-                    title: this.props.appName
-                }
+                this.destinationPath('src/' + this.props.appName + '/Gruntfile.js')
             );
         },
 
