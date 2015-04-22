@@ -13,7 +13,7 @@ module.exports = yeoman.generators.Base.extend({
 
         // Have Yeoman greet the user.
         this.log(yosay(
-            'Welcome to the striking ' + chalk.red('Asp5angular') + ' generator!'
+            'Welcome to the striking ' + chalk.red('MVC6-Angular') + ' generator!'
         ));
 
         var prompts = [{

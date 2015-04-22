@@ -1,10 +1,10 @@
 {
-  "name": "generator-asp5angular",
+  "name": "generator-mvc6-angular",
   "version": "0.0.0",
   "description": "Yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "dolanmiu/generator-asp5angular",
+  "repository": "dolanmiu/generator-mvc6-angular",
   "author": {
     "name": "Dolan",
     "email": "",
