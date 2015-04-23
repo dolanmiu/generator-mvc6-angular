@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.22310.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C7037D18-04CF-4DD6-B948-909039AD95B0}"
+Project("{<%= solutionTypeGuid %>}") = "src", "src", "<%= srcGuid %>"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "<%= title %>", "src\<%= title %>\<%= title %>.kproj", "{907542A0-331E-4A2C-82A5-6093DE3FC35E}"
+Project("{<%= projectTypeGuid %>}") = "<%= title %>", "src\<%= title %>\<%= title %>.kproj", "{<%= projectGuid %>}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{84451C5B-7759-4BFD-921B-5AB12A25E900}"
+Project("{<%= solutionTypeGuid %>}") = "Solution Items", "Solution Items", "{<%= solutionGuid %>}"
 	ProjectSection(SolutionItems) = preProject
 		global.json = global.json
 	EndProjectSection
@@ -18,15 +18,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{907542A0-331E-4A2C-82A5-6093DE3FC35E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{907542A0-331E-4A2C-82A5-6093DE3FC35E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{907542A0-331E-4A2C-82A5-6093DE3FC35E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{907542A0-331E-4A2C-82A5-6093DE3FC35E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{<%= projectGuid %>}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{<%= projectGuid %>}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{<%= projectGuid %>}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{<%= projectGuid %>}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{907542A0-331E-4A2C-82A5-6093DE3FC35E} = {C7037D18-04CF-4DD6-B948-909039AD95B0}
+		{<%= projectGuid %>} = {<%= srcGuid %>}
 	EndGlobalSection
 EndGlobal

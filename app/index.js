@@ -2,10 +2,18 @@
 var yeoman = require('yeoman-generator');
 var chalk = require('chalk');
 var yosay = require('yosay');
+var Guid = require('guid');
 
 module.exports = yeoman.generators.Base.extend({
     initializing: function () {
         this.pkg = require('../package.json');
+        this.guids = {
+            project: Guid.create(),
+            projectType: Guid.create(),
+            solution: Guid.create(),
+            solutionType: Guid.create(),
+            src: Guid.create()
+        }
     },
 
     prompting: function () {
@@ -42,9 +50,11 @@ module.exports = yeoman.generators.Base.extend({
                 this.templatePath('src/_package.json'),
                 this.destinationPath('src/' + this.props.appName + '/package.json')
             );
-            this.fs.copy(
+            this.fs.copyTpl(
                 this.templatePath('src/_bower.json'),
-                this.destinationPath('src/' + this.props.appName + '/bower.json')
+                this.destinationPath('src/' + this.props.appName + '/bower.json'), {
+                    title: this.props.appName
+                }
             );
             this.fs.copy(
                 this.templatePath('src/_project.json'),
@@ -82,13 +92,19 @@ module.exports = yeoman.generators.Base.extend({
             this.fs.copyTpl(
                 this.templatePath('_Solution.sln'),
                 this.destinationPath(this.props.appName + '.sln'), {
-                    title: this.props.appName
+                    title: this.props.appName,
+                    projectGuid: this.guids.project,
+                    projectTypeGuid: this.guids.projectType,
+                    solutionGuid: this.guids.solution,
+                    solutionTypeGuid: this.guids.solutionType,
+                    srcGuid: this.guids.src
                 }
             );
             this.fs.copyTpl(
                 this.templatePath('src/_Project.kproj'),
                 this.destinationPath('src/' + this.props.appName + '/' + this.props.appName + '.kproj'), {
-                    title: this.props.appName
+                    title: this.props.appName,
+                    guid: this.guids.project,
                 }
             );
         },
