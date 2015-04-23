@@ -1,15 +1,14 @@
 {
   "name": "generator-mvc6-angular",
-  "version": "0.0.0",
-  "description": "Yeoman generator",
+  "version": "0.1.0",
+  "description": "MVC 6 Angular Yeoman generator",
   "license": "MIT",
   "main": "app/index.js",
-  "repository": "dolanmiu/generator-mvc6-angular",
-  "author": {
-    "name": "Dolan",
-    "email": "",
-    "url": "https://github.com/dolanmiu"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dolanmiu/generator-mvc6-angular"
   },
+  "author": "Dolan (https://github.com/dolanmiu)",
   "scripts": {
     "test": "mocha"
   },
@@ -17,7 +16,12 @@
     "app"
   ],
   "keywords": [
-    "yeoman-generator"
+    "yeoman-generator",
+    "mvc",
+    "mvc6",
+    "angular",
+    "generator",
+    "asp"
   ],
   "dependencies": {
     "chalk": "^1.0.0",
@@ -27,5 +31,12 @@
   },
   "devDependencies": {
     "mocha": "*"
+  },
+  "bugs": {
+    "url": "https://github.com/dolanmiu/generator-mvc6-angular/issues"
+  },
+  "homepage": "https://github.com/dolanmiu/generator-mvc6-angular",
+  "directories": {
+    "test": "test"
   }
 }
