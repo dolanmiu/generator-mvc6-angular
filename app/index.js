@@ -24,12 +24,12 @@ module.exports = yeoman.generators.Base.extend({
             'Welcome to the striking ' + chalk.red('MVC6-Angular') + ' generator!'
         ));
 
-        var prompts = [{
+        var prompts = [/*{
             type: 'confirm',
             name: 'someOption',
             message: 'Would you like to enable this option?',
             default: true
-        }, {
+        }, */{
             type: 'input',
             name: 'appName',
             message: 'What is the app name?',
@@ -94,9 +94,7 @@ module.exports = yeoman.generators.Base.extend({
                 this.destinationPath(this.props.appName + '.sln'), {
                     title: this.props.appName,
                     projectGuid: this.guids.project,
-                    projectTypeGuid: this.guids.projectType,
                     solutionGuid: this.guids.solution,
-                    solutionTypeGuid: this.guids.solutionType,
                     srcGuid: this.guids.src
                 }
             );
@@ -138,10 +136,14 @@ module.exports = yeoman.generators.Base.extend({
                 }
             );
             this.fs.copyTpl(
-                this.templatePath('src/client/app/_index.js'),
-                this.destinationPath('src/' + this.props.appName + '/Client/App/index.js'), {
+                this.templatePath('src/client/app/_app.js'),
+                this.destinationPath('src/' + this.props.appName + '/Client/App/app.js'), {
                     title: this.props.appName
                 }
+            );
+            this.fs.copy(
+                this.templatePath('src/client/app/_app.scss'),
+                this.destinationPath('src/' + this.props.appName + '/Client/App/app.scss')
             );
             this.fs.copyTpl(
                 this.templatePath('src/client/app/components/navbar/_navbar.controller.js'),
@@ -165,6 +167,6 @@ module.exports = yeoman.generators.Base.extend({
     install: function () {
         var npmdir = 'src/' + this.props.appName;
         process.chdir(npmdir);
-        this.installDependencies();
+        //this.installDependencies();
     }
 });
