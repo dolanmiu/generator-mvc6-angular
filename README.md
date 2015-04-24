@@ -40,11 +40,11 @@ Note: You need to have Visual Studio 2013 or 2015 installed.
 
 ## Creating the client
 
-As you know, the client is made with Angular, and its all in the `Client` folder. `index.js` is the main file which declares your app's namespace, and the rest of the Angular app is inside the `App` folder. 
+As you know, the client is made with Angular, and its all in the `Client` folder. `app.js` is the main file which declares your app's namespace, and the rest of the Angular app is inside the `App` folder. 
 
 Inside the `App` folder, you get the `Components` folder, which stores the components of the app, and the rest of the different pages. You are provided with a default `Main` folder, which is the main page you see when you start the app.
 
-By default, the generator uses superior `ui.router`, to add more routes, edit the `index.js` file. I will add options for future releases though.
+By default, the generator uses superior `ui.router`, to add more routes, edit the `app.js` file. I will add options for future releases though.
 
 ### Directory structure
 
@@ -55,7 +55,7 @@ Here is the directory structure for the `Client` folder:
     │   ├── App                 - All of our app specific components go in here
     |   |   ├── Components      - Our reusable components, non-specific to to our app
     │   |   ├── Main            - Specific app component
-    │   |   └ index.js          - The main angular js file which declares angular dependancies and routes.
+    │   |   └ app.js          - The main angular js file which declares angular dependancies and routes.
     │   ├── Assets              - Custom assets: fonts, images, etc…
     │   └── index.html          - App entry point
     │
