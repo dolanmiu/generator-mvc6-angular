@@ -55,7 +55,7 @@ Here is the directory structure for the `Client` folder:
     │   ├── App                 - All of our app specific components go in here
     |   |   ├── Components      - Our reusable components, non-specific to to our app
     │   |   ├── Main            - Specific app component
-    │   |   └ app.js          - The main angular js file which declares angular dependancies and routes.
+    │   |   └ app.js            - The main angular js file which declares angular dependancies and routes.
     │   ├── Assets              - Custom assets: fonts, images, etc…
     │   └── index.html          - App entry point
     │
