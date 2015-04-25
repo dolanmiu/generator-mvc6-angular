@@ -167,6 +167,6 @@ module.exports = yeoman.generators.Base.extend({
     install: function () {
         var npmdir = 'src/' + this.props.appName;
         process.chdir(npmdir);
-        //this.installDependencies();
+        this.installDependencies();
     }
 });
