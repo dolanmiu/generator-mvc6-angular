@@ -2,7 +2,9 @@
 
 > [Yeoman](http://yeoman.io) generator
 
-Sorry everyone who has downloaded this recently, I was just testing publishing it to npm (my first npm release), so there are some issues!
+Sorry everyone who has downloaded this recently, I was just testing publishing it to npm (my first npm release), so there are some issues! I will releasing frequent very updates!
+
+**Note: You need to have Visual Studio 2015 installed. [Visual Studio 2013 is does not support MVC 6](http://stackoverflow.com/questions/24259598/is-it-possible-to-use-asp-net-mvc-6-in-visual-studio-2013)**
 
 ## Getting Started
 
@@ -24,11 +26,11 @@ Initiate the generator:
 yo mvc6-angular
 ```
 
-Finally, follow the instructions on the generator. It will prompt you for the name of the app.
+Follow the instructions on the generator. It will prompt you for the name of the app.
+
+The Visual Studio 2015 project is located in: `\src\[PROJECT NAME]\[PROJECT NAME].kproj`. When you first exit the project, it will try to create the other nessesary Visual Studio files, including the Solution (`.sln`) file. It is recommended for tidyness to save the `.sln` file in the root (same path as the `.gitignore`). This is because Visual Studio will create other user preferance meta-data (`.suo` files) not related to the source of the app. 
 
 ## Usage
-
-Note: You need to have Visual Studio 2013 or 2015 installed.
 
 1. To build, you run, you must go to the Task Runner Explorer, and run the `build` task. This will build the angular front-end into the `wwwroot` folder.
 
@@ -71,7 +73,7 @@ If you are fancy, you can set up automatic building upon Starting the app by add
 
 We recommend you to make a RESTful service to communicate with the Angular Client to a nice and clean separation of concern:
 
-1. To do so, right click a folder, and select `Add > New Item:
+1. To do so, right click a folder, and select `Add > New Item`:
 
  ![](http://i61.tinypic.com/27yvnso.png)
 
@@ -82,16 +84,17 @@ We recommend you to make a RESTful service to communicate with the Angular Clien
 
 ## Features
 
-Bootstrap
-
-Angular
-
-Grunt - ASP.NET MVC6 has the Task Runner Explorer which has built in [Grunt](http://gruntjs.com) support!
-
-Bower, NPM and NuGet - ASP.NET MVC6 has built in support for these three repositories! To install new dependencies, `right click > restore`
-
-![](http://i60.tinypic.com/rau9li.png)
-
+* Bootstrap
+* Angular
+* Grunt - ASP.NET MVC6 has the Task Runner Explorer which has built in [Grunt](http://gruntjs.com) support!
+* Bower, NPM and NuGet - Built in support for these three repositories! To install new dependencies, `right click > restore`
+ 
+ ![](http://i60.tinypic.com/rau9li.png)
+* No More Web Forms
+* No More Visual Basic
+* Tag Helpers
+* Edit while running the solution like Classic ASP editing
+* ASP.NET Dependency Injection Framework
 
 ### Getting To Know Yeoman
 

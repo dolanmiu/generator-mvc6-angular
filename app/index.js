@@ -39,7 +39,7 @@ module.exports = yeoman.generators.Base.extend({
         this.prompt(prompts, function (props) {
             this.props = props;
             // To access props later use this.props.someOption;
-
+            this.props.appName = this.props.appName.split(' ').join('_');
             done();
         }.bind(this));
     },
@@ -89,7 +89,7 @@ module.exports = yeoman.generators.Base.extend({
                     title: this.props.appName
                 }
             );
-            this.fs.copyTpl(
+            /*this.fs.copyTpl(
                 this.templatePath('_Solution.sln'),
                 this.destinationPath(this.props.appName + '.sln'), {
                     title: this.props.appName,
@@ -97,7 +97,7 @@ module.exports = yeoman.generators.Base.extend({
                     solutionGuid: this.guids.solution,
                     srcGuid: this.guids.src
                 }
-            );
+            );*/
             this.fs.copyTpl(
                 this.templatePath('src/_Project.kproj'),
                 this.destinationPath('src/' + this.props.appName + '/' + this.props.appName + '.kproj'), {
