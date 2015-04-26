@@ -2,7 +2,7 @@
 
 > [Yeoman](http://yeoman.io) generator
 
-Sorry everyone who has downloaded this recently, I was just testing publishing it to npm (my first npm release), so there are some issues! I will releasing frequent very updates!
+Sorry everyone who has downloaded this recently, I was just testing publishing it to npm (my first npm release), so there are some issues! I will releasing very frequent updates!
 
 **Note: You need to have Visual Studio 2015 installed. [Visual Studio 2013 is does not support MVC 6](http://stackoverflow.com/questions/24259598/is-it-possible-to-use-asp-net-mvc-6-in-visual-studio-2013)**
 
