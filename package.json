@@ -13,7 +13,8 @@
     "test": "mocha"
   },
   "files": [
-    "app"
+    "app",
+    "endpoint"
   ],
   "keywords": [
     "yeoman-generator",
