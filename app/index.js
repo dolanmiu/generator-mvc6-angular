@@ -24,16 +24,18 @@ module.exports = yeoman.generators.Base.extend({
             'Welcome to the striking ' + chalk.red('MVC6-Angular') + ' generator!'
         ));
 
-        var prompts = [/*{
-            type: 'confirm',
-            name: 'someOption',
-            message: 'Would you like to enable this option?',
-            default: true
-        }, */{
-            type: 'input',
-            name: 'appName',
-            message: 'What is the app name?',
-            default: 'Untitled'
+        var prompts = [
+            /*{
+                        type: 'confirm',
+                        name: 'someOption',
+                        message: 'Would you like to enable this option?',
+                        default: true
+                    }, */
+            {
+                type: 'input',
+                name: 'appName',
+                message: 'What is the app name?',
+                default: 'Untitled'
         }];
 
         this.prompt(prompts, function (props) {
@@ -160,6 +162,15 @@ module.exports = yeoman.generators.Base.extend({
             this.fs.copy(
                 this.templatePath('src/client/app/components/footer/_footer.html'),
                 this.destinationPath('src/' + this.props.appName + '/Client/App/Components/Footer/footer.html')
+            );
+        },
+        
+        server: function () {
+            this.fs.copyTpl(
+                this.templatePath('src/server/api/_thingcontroller.cs'),
+                this.destinationPath('src/' + this.props.appName + '/Server/API/ThingController.cs'), {
+                    title: this.props.appName
+                }
             );
         }
     },
