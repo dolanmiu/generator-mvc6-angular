@@ -128,6 +128,18 @@ module.exports = yeoman.generators.Base.extend({
                 this.destinationPath('src/' + this.props.appName + '/Client/Assets/Images/yeoman.png')
             );
             this.fs.copy(
+                this.templatePath('src/client/assets/images/_angular.png'),
+                this.destinationPath('src/' + this.props.appName + '/Client/Assets/Images/angular.png')
+            );
+            this.fs.copy(
+                this.templatePath('src/client/assets/images/_bootstrap.png'),
+                this.destinationPath('src/' + this.props.appName + '/Client/Assets/Images/bootstrap.png')
+            );
+            this.fs.copy(
+                this.templatePath('src/client/assets/images/_karma.png'),
+                this.destinationPath('src/' + this.props.appName + '/Client/Assets/Images/karma.png')
+            );
+            this.fs.copy(
                 this.templatePath('src/client/app/main/_main.html'),
                 this.destinationPath('src/' + this.props.appName + '/Client/App/Main/main.html')
             );
@@ -140,6 +152,12 @@ module.exports = yeoman.generators.Base.extend({
             this.fs.copyTpl(
                 this.templatePath('src/client/app/_app.js'),
                 this.destinationPath('src/' + this.props.appName + '/Client/App/app.js'), {
+                    title: this.props.appName
+                }
+            );
+            this.fs.copyTpl(
+                this.templatePath('src/client/app/_resources.js'),
+                this.destinationPath('src/' + this.props.appName + '/Client/App/resources.js'), {
                     title: this.props.appName
                 }
             );
@@ -164,11 +182,17 @@ module.exports = yeoman.generators.Base.extend({
                 this.destinationPath('src/' + this.props.appName + '/Client/App/Components/Footer/footer.html')
             );
         },
-        
+
         server: function () {
             this.fs.copyTpl(
-                this.templatePath('src/server/api/_thingcontroller.cs'),
-                this.destinationPath('src/' + this.props.appName + '/Server/API/ThingController.cs'), {
+                this.templatePath('src/server/api/_thingscontroller.cs'),
+                this.destinationPath('src/' + this.props.appName + '/Server/API/ThingsController.cs'), {
+                    title: this.props.appName
+                }
+            );
+            this.fs.copyTpl(
+                this.templatePath('src/server/api/models/_thing.cs'),
+                this.destinationPath('src/' + this.props.appName + '/Server/API/Models/Thing.cs'), {
                     title: this.props.appName
                 }
             );
