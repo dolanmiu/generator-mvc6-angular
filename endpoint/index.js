@@ -2,20 +2,24 @@
 var yeoman = require('yeoman-generator');
 
 module.exports = yeoman.generators.Base.extend({
-  initializing: function () {
-    this.argument('name', {
-      required: true,
-      type: String,
-      desc: 'The subgenerator name'
-    });
+    initializing: function () {
+        this.argument('name', {
+            required: true,
+            type: String,
+            desc: 'The subgenerator name'
+        });
 
-    this.log('You called the Mvc6Angular subgenerator with the argument ' + this.name + '.');
-  },
+        this.log('Creating API endpoint ' + this.name + 'Controller...');
+    },
 
-  writing: function () {
-    this.fs.copy(
-      this.templatePath('somefile.js'),
-      this.destinationPath('somefile.js')
-    );
-  }
+    writing: function () {
+        var appName = this.config.get('appName');
+        this.fs.copyTpl(
+            this.templatePath('_endpoint.cs'),
+            this.destinationPath('src/' + appName + '/Server/API/' + this.name + 'Controller.cs'), {
+                title: appName,
+                name: this.name
+            }
+        );
+    }
 });
