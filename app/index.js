@@ -45,6 +45,10 @@ module.exports = yeoman.generators.Base.extend({
             done();
         }.bind(this));
     },
+        
+    config: function () {
+        this.config.set('appName', this.props.appName);
+    },
 
     writing: {
         dependancies: function () {
@@ -202,6 +206,10 @@ module.exports = yeoman.generators.Base.extend({
     install: function () {
         var npmdir = 'src/' + this.props.appName;
         process.chdir(npmdir);
-        this.installDependencies();
+        this.installDependencies({
+            callback: function () {
+                    this.spawnCommand('grunt', ['build']);
+                }.bind(this) // bind the callback to the parent scope
+        });
     }
 });
