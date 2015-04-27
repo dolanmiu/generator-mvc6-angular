@@ -4,9 +4,9 @@
 
 Sorry everyone who has downloaded this recently, I was just testing publishing it to npm (my first npm release), so there are some issues! I will releasing very frequent updates!
 
-**Note: You need to have Visual Studio 2015 installed. [Visual Studio 2013 is does not support MVC 6](http://stackoverflow.com/questions/24259598/is-it-possible-to-use-asp-net-mvc-6-in-visual-studio-2013)**
+**Note: You need to have Visual Studio 2015 installed. It is currently in Preview and is [free here](https://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx). [Visual Studio 2013 does not support MVC 6](http://stackoverflow.com/questions/24259598/is-it-possible-to-use-asp-net-mvc-6-in-visual-studio-2013), unless you find a way to open [vNext .kpoj](http://stackoverflow.com/questions/27004639/cant-open-kproj-projects-in-vs-net-2013-update-4) files.**
 
-## Getting Started
+# Getting Started
 
 Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
 
@@ -30,7 +30,7 @@ Follow the instructions on the generator. It will prompt you for the name of the
 
 The Visual Studio 2015 project is located in: `\src\[PROJECT NAME]\[PROJECT NAME].kproj`. When you first exit the project, it will try to create the other nessesary Visual Studio files, including the Solution (`.sln`) file. It is recommended for tidyness to save the `.sln` file in the root (same path as the `.gitignore`). This is because Visual Studio will create other user preferance meta-data (`.suo` files) not related to the source of the app. 
 
-## Usage
+# Usage
 
 1. To build, you run, you must go to the Task Runner Explorer, and run the `build` task. This will build the angular front-end into the `wwwroot` folder.
 
@@ -40,7 +40,7 @@ The Visual Studio 2015 project is located in: `\src\[PROJECT NAME]\[PROJECT NAME
 
  ![](http://i57.tinypic.com/2rhmbt1.png)
 
-## Creating the client
+# Creating the client
 
 As you know, the client is made with Angular, and its all in the `Client` folder. `app.js` is the main file which declares your app's namespace, and the rest of the Angular app is inside the `App` folder. 
 
@@ -48,7 +48,7 @@ Inside the `App` folder, you get the `Components` folder, which stores the compo
 
 By default, the generator uses superior `ui.router`, to add more routes, edit the `app.js` file. I will add options for future releases though.
 
-### Directory structure
+## Directory structure
 
 Here is the directory structure for the `Client` folder:
 
@@ -62,15 +62,29 @@ Here is the directory structure for the `Client` folder:
     │   └── index.html          - App entry point
     │
 
-### Building the client
+## Building the client
 As mentioned above, for your changes to show on the browser, you must build the client using [Grunt](http://gruntjs.com) by using the `Task Runner Explorer`. The build script contains uglifying, concating and js and sass files.
 
 If you are fancy, you can set up automatic building upon Starting the app by adding a `binding`:
 
 ![](http://i59.tinypic.com/33vbxc7.png)
 
-## Back-end
+# Back-end
+## Create using sub-generator
+### Endpoint
+Generates a new API endpoint.
 
+
+Example:
+```bash
+yo mvc6-angular:endpoint Messages
+```
+
+Produces:
+
+    src/[APP NAME]/Server/API/MessagesController.cs
+    
+## Create using Visual Studio
 We recommend you to make a RESTful service to communicate with the Angular Client to a nice and clean separation of concern:
 
 1. To do so, right click a folder, and select `Add > New Item`:
@@ -82,7 +96,7 @@ We recommend you to make a RESTful service to communicate with the Angular Clien
  ![](http://i59.tinypic.com/2zhpnpj.png)
 
 
-## Features
+# Features
 
 * Bootstrap
 * Angular
@@ -96,14 +110,7 @@ We recommend you to make a RESTful service to communicate with the Angular Clien
 * Edit while running the solution like Classic ASP editing
 * ASP.NET Dependency Injection Framework
 
-### Getting To Know Yeoman
-
-Yeoman has a heart of gold. He's a person with feelings and opinions, but he's very easy to work with. If you think he's too opinionated, he can be easily convinced.
-
-If you'd like to get to know Yeoman better and meet some of his friends, [Grunt](http://gruntjs.com) and [Bower](http://bower.io), check out the complete [Getting Started Guide](https://github.com/yeoman/yeoman/wiki/Getting-Started).
-
-
-## License
+# License
 
 (The MIT License)
 
