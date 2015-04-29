@@ -74,13 +74,13 @@ Generates a folder containing a controller, a HTML view and a route to allow acc
 
 Example:
 ```bash
-yo mvc6-angular:page Messages
+yo mvc6-angular:page Portfolio
 ```
 Produces:
 
-    src/[APP NAME]/Client/App/[YOUR PAGE]/[YOUR PAGE].html
-    src/[APP NAME]/Client/App/[YOUR PAGE]/[YOUR PAGE]Controller.js
-    src/[APP NAME]/Client/App/[YOUR PAGE]/routes.js
+    src/[APP NAME]/Client/App/portfolio/portfolio.html
+    src/[APP NAME]/Client/App/portfolio/portfolio.controller.js
+    src/[APP NAME]/Client/App/portfolio/routes.js
 
 ## Back-end
 ### Endpoint
