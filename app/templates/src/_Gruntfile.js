@@ -16,7 +16,16 @@ module.exports = function (grunt) {
     //grunt.loadNpmTasks('grunt-contrib-uglify');
     //grunt.loadNpmTasks('grunt-contrib-watch');
     // Load grunt tasks automatically
-    require('load-grunt-tasks')(grunt);
+    //require('load-grunt-tasks')(grunt);
+    // Load grunt tasks automatically, when needed
+    require('jit-grunt')(grunt, {
+        useminPrepare: 'grunt-usemin',
+        ngtemplates: 'grunt-angular-templates',
+        cdnify: 'grunt-google-cdn',
+        //protractor: 'grunt-protractor-runner',
+        injector: 'grunt-injector'
+        //buildcontrol: 'grunt-build-control'
+    });
 
     // Time how long tasks take. Can help when optimizing build times
     require('time-grunt')(grunt);
