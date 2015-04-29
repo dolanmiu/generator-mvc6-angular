@@ -7,9 +7,6 @@ Sorry everyone who has downloaded this recently, I was just testing publishing i
 **Note: You need to have Visual Studio 2015 installed. It is currently in Preview and is [free here](https://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx). [Visual Studio 2013 does not support MVC 6](http://stackoverflow.com/questions/24259598/is-it-possible-to-use-asp-net-mvc-6-in-visual-studio-2013), unless you find a way to open [vNext .kpoj](http://stackoverflow.com/questions/27004639/cant-open-kproj-projects-in-vs-net-2013-update-4) files.**
 
 # Getting Started
-
-Not every new computer comes with a Yeoman pre-installed. He lives in the [npm](https://npmjs.org) package repository. You only have to ask for him once, then he packs up and moves into your hard drive. *Make sure you clean up, he likes new and shiny things.*
-
 ```bash
 npm install -g yo
 ```
@@ -30,7 +27,8 @@ Follow the instructions on the generator. It will prompt you for the name of the
 
 The Visual Studio 2015 project is located in: `\src\[PROJECT NAME]\[PROJECT NAME].kproj`. When you first exit the project, it will try to create the other nessesary Visual Studio files, including the Solution (`.sln`) file. It is recommended for tidyness to save the `.sln` file in the root (same path as the `.gitignore`). This is because Visual Studio will create other user preferance meta-data (`.suo` files) not related to the source of the app. 
 
-# Usage
+# Running
+**Note: A grunt watch will be made in the future so you wouldn't need to build everytime**
 
 1. To build, you run, you must go to the Task Runner Explorer, and run the `build` task. This will build the angular front-end into the `wwwroot` folder.
 
@@ -57,9 +55,9 @@ Here is the directory structure for the `Client` folder:
     │   ├── App                 - All of our app specific components go in here
     |   |   ├── Components      - Our reusable components, non-specific to to our app
     │   |   ├── Main            - Specific app component
-    │   |   └ app.js            - The main angular js file which declares angular dependancies and routes.
+    │   |   └ app.js            - Main AngularJS file which wires angular dependancies.
     │   ├── Assets              - Custom assets: fonts, images, etc…
-    │   └── index.html          - App entry point
+    │   └── index.html          - App main page (ng-app lives here)
     │
 
 ## Building the client
@@ -69,8 +67,22 @@ If you are fancy, you can set up automatic building upon Starting the app by add
 
 ![](http://i59.tinypic.com/33vbxc7.png)
 
-# Back-end
-## Create using sub-generator
+# Sub-generators
+## Front-end
+### Page
+Generates a folder containing a controller, a HTML view and a route to allow access to `http://localhost/[YOUR PAGE]`
+
+Example:
+```bash
+yo mvc6-angular:page Messages
+```
+Produces:
+
+    src/[APP NAME]/Client/App/[YOUR PAGE]/[YOUR PAGE].html
+    src/[APP NAME]/Client/App/[YOUR PAGE]/[YOUR PAGE]Controller.js
+    src/[APP NAME]/Client/App/[YOUR PAGE]/routes.js
+
+## Back-end
 ### Endpoint
 Generates a new API endpoint.
 
@@ -84,7 +96,7 @@ Produces:
 
     src/[APP NAME]/Server/API/MessagesController.cs
     
-## Create using Visual Studio
+### Visual Studio Equivalent 
 We recommend you to make a RESTful service to communicate with the Angular Client to a nice and clean separation of concern:
 
 1. To do so, right click a folder, and select `Add > New Item`:
@@ -104,6 +116,7 @@ We recommend you to make a RESTful service to communicate with the Angular Clien
 * Bower, NPM and NuGet - Built in support for these three repositories! To install new dependencies, `right click > restore`
  
  ![](http://i60.tinypic.com/rau9li.png)
+* jit-grunt for increased build speed
 * No More Web Forms
 * No More Visual Basic
 * Tag Helpers
