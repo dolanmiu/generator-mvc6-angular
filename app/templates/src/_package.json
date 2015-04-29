@@ -25,6 +25,8 @@
         "grunt-svgmin": "^2.0.0",
         "grunt-usemin": "^3.0.0",
         "grunt-wiredep": "^2.0.0",
+        "grunt-injector": "^0.6.0",
+        "grunt-angular-templates": "^0.5.7",
         "jasmine-core": "^2.2.0",
         "jshint-stylish": "^1.0.0",
         "karma": "^0.12.31",
@@ -32,10 +34,8 @@
         "karma-phantomjs-launcher": "^0.1.4",
         "load-grunt-tasks": "^3.1.0",
         "time-grunt": "^1.0.0",
-        "grunt-injector": "^0.6.0",
-        "grunt-angular-templates": "^0.5.7",
         "jit-grunt": "^0.9.1"
-        
+
     },
     "engines": {
         "node": ">=0.10.0"
