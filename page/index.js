@@ -9,7 +9,7 @@ module.exports = yeoman.generators.Base.extend({
             type: String,
             desc: 'The subgenerator name'
         });
-
+        this.name = this.name.split(' ').join('-');
         this.log('Creating Page bundle: ' + this.name + ' in src/' + appName + '/Client/App/');
     },
 
