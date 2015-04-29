@@ -9,7 +9,7 @@ module.exports = yeoman.generators.Base.extend({
             desc: 'The subgenerator name'
         });
 
-        this.log('Creating API endpoint ' + this.name + 'Controller...');
+        this.log('Creating API endpoint: ' + this.name + 'Controller...');
     },
 
     writing: function () {
