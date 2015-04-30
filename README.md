@@ -70,7 +70,7 @@ If you are fancy, you can set up automatic building upon Starting the app by add
 # Sub-generators
 ## Front-end
 ### Page
-Generates a folder containing a controller, a HTML view and a route to allow access to `http://localhost/[YOUR PAGE]`
+Generates a folder containing a controller, a HTML view and a route to allow access to: `http://localhost/[YOUR PAGE]`
 
 Example:
 ```bash
