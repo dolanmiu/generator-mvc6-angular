@@ -64,7 +64,7 @@ module.exports = yeoman.generators.Base.extend({
             projectGenerator.create(this);
         },
 
-        buildtool: function () {
+        grunt: function () {
             gruntGenerator.create(this);
         },
 
