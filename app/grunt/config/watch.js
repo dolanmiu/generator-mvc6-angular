@@ -1,6 +1,6 @@
 /*globals module */
 // Watches files for changes and runs tasks based on the changed files
-module.exports = function (generator) {
+module.exports = function (gruntfile) {
     'use strict';
 
     var watch = {};
@@ -43,5 +43,5 @@ module.exports = function (generator) {
         ]
     };
 
-    generator.gruntfile.insertConfig('watch', JSON.stringify(watch));
+    gruntfile.insertConfig('watch', JSON.stringify(watch));
 };

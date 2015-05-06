@@ -1,5 +1,5 @@
 /*globals module */
-module.exports = function (generator) {
+module.exports = function (gruntfile) {
     'use strict';
 
     var test = [
@@ -11,5 +11,5 @@ module.exports = function (generator) {
         'karma'
     ];
 
-    generator.gruntfile.registerTask('test', test);
+    gruntfile.registerTask('test', test);
 };

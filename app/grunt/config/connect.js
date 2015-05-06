@@ -1,6 +1,6 @@
 /*globals module, appConfig */
 // The actual grunt server settings
-module.exports = function (generator) {
+module.exports = function (gruntfile) {
     'use strict';
 
     var connect = {};
@@ -56,5 +56,5 @@ module.exports = function (generator) {
         }
     };
 
-    generator.gruntfile.insertConfig('connect', JSON.stringify(connect));
+    gruntfile.insertConfig('connect', JSON.stringify(connect));
 };

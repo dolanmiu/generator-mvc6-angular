@@ -1,5 +1,5 @@
 /*globals module */
-module.exports = function (generator) {
+module.exports = function (gruntfile) {
     'use strict';
 
     var build = [
@@ -23,5 +23,5 @@ module.exports = function (generator) {
         'clean:server'
     ];
 
-    generator.gruntfile.registerTask('build', build);
+    gruntfile.registerTask('build', build);
 };

@@ -1,5 +1,5 @@
 /*globals module */
-module.exports = function (generator) {
+module.exports = function (gruntfile) {
     'use strict';
 
     var sass = {};
@@ -14,5 +14,5 @@ module.exports = function (generator) {
         }
     };
 
-    generator.gruntfile.insertConfig('sass', JSON.stringify(sass));
+    gruntfile.insertConfig('sass', JSON.stringify(sass));
 };

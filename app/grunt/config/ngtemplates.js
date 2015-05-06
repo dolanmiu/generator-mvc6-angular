@@ -1,5 +1,5 @@
 /*globals module */
-module.exports = function (generator) {
+module.exports = function (gruntfile) {
     'use strict';
 
     var ngtemplates = {};
@@ -13,5 +13,5 @@ module.exports = function (generator) {
         dest: '<%= yeoman.temp %>/templates.js'
     };
 
-    generator.gruntfile.insertConfig('ngtemplates', JSON.stringify(ngtemplates));
+    gruntfile.insertConfig('ngtemplates', JSON.stringify(ngtemplates));
 };

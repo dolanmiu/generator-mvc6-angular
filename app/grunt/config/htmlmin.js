@@ -1,5 +1,5 @@
 /*globals module */
-module.exports = function (generator) {
+module.exports = function (gruntfile) {
     'use strict';
 
     var htmlmin = {};
@@ -20,5 +20,5 @@ module.exports = function (generator) {
         }]
     };
 
-    generator.gruntfile.insertConfig('htmlmin', JSON.stringify(htmlmin));
+    gruntfile.insertConfig('htmlmin', JSON.stringify(htmlmin));
 };

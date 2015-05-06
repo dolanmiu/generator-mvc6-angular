@@ -1,6 +1,6 @@
 /*globals module */
 // Add vendor prefixed styles
-module.exports = function (generator) {
+module.exports = function (gruntfile) {
     'use strict';
 
     var autoprefixer = {};
@@ -30,5 +30,5 @@ module.exports = function (generator) {
         }]
     };
 
-    generator.gruntfile.insertConfig('autoprefixer', JSON.stringify(autoprefixer));
+    gruntfile.insertConfig('autoprefixer', JSON.stringify(autoprefixer));
 };

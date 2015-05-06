@@ -1,6 +1,6 @@
 /*globals module */
 // Empties folders to start fresh
-module.exports = function (generator) {
+module.exports = function (gruntfile) {
     'use strict';
 
     var clean = {};
@@ -14,5 +14,5 @@ module.exports = function (generator) {
 
     clean.server = '<%= yeoman.temp %>';
 
-    generator.gruntfile.insertConfig('clean', JSON.stringify(clean));
+    gruntfile.insertConfig('clean', JSON.stringify(clean));
 };

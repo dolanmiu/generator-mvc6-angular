@@ -1,5 +1,5 @@
 /*globals module */
-module.exports = function (generator) {
+module.exports = function (gruntfile) {
     'use strict';
 
     var injector = {};
@@ -30,5 +30,5 @@ module.exports = function (generator) {
         }]
     };
 
-    generator.gruntfile.insertConfig('injector', JSON.stringify(injector));
+    gruntfile.insertConfig('injector', JSON.stringify(injector));
 };

@@ -1,6 +1,6 @@
 /*globals module */
 // Replace Google CDN references
-module.exports = function (generator) {
+module.exports = function (gruntfile) {
     'use strict';
 
     var cdnify = {};
@@ -9,5 +9,5 @@ module.exports = function (generator) {
         html: ['<%= yeoman.dist %>/*.html']
     };
 
-    generator.gruntfile.insertConfig('cdnify', JSON.stringify(cdnify));
+    gruntfile.insertConfig('cdnify', JSON.stringify(cdnify));
 };

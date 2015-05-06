@@ -1,6 +1,6 @@
 /*globals module */
 // Renames files for browser caching purposes
-module.exports = function (generator) {
+module.exports = function (gruntfile) {
     'use strict';
 
     var filerev = {};
@@ -14,5 +14,5 @@ module.exports = function (generator) {
         ]
     };
 
-    generator.gruntfile.insertConfig('filerev', JSON.stringify(filerev));
+    gruntfile.insertConfig('filerev', JSON.stringify(filerev));
 };

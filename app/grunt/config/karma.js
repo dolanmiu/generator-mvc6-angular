@@ -1,6 +1,6 @@
 /*globals module */
 // Test settings
-module.exports = function (generator) {
+module.exports = function (gruntfile) {
     'use strict';
 
     var karma = {};
@@ -10,5 +10,5 @@ module.exports = function (generator) {
         singleRun: true
     };
 
-    generator.gruntfile.insertConfig('karma', JSON.stringify(karma));
+    gruntfile.insertConfig('karma', JSON.stringify(karma));
 };

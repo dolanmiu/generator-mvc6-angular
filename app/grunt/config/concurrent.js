@@ -1,6 +1,6 @@
 /*globals module */
 // Run some tasks in parallel to speed up the build process
-module.exports = function (generator) {
+module.exports = function (gruntfile) {
     'use strict';
 
     var concurrent = {};
@@ -15,5 +15,5 @@ module.exports = function (generator) {
         'svgmin'
     ];
 
-    generator.gruntfile.insertConfig('concurrent', JSON.stringify(concurrent));
+    gruntfile.insertConfig('concurrent', JSON.stringify(concurrent));
 };

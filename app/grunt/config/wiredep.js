@@ -1,6 +1,6 @@
 /*globals module */
 // Automatically inject Bower components into the app
-module.exports = function (generator) {
+module.exports = function (gruntfile) {
     'use strict';
 
     var wiredep = {};
@@ -32,5 +32,5 @@ module.exports = function (generator) {
         ignorePath: /(\.\.\/){1,2}bower_components\//
     };
 
-    generator.gruntfile.insertConfig('wiredep', JSON.stringify(wiredep));
+    gruntfile.insertConfig('wiredep', JSON.stringify(wiredep));
 };

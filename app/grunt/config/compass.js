@@ -1,6 +1,6 @@
 /*globals module */
 // Compiles Sass to CSS and generates necessary files if requested
-module.exports = function (generator) {
+module.exports = function (gruntfile) {
     'use strict';
 
     var compass = {};
@@ -33,5 +33,5 @@ module.exports = function (generator) {
         }
     };
 
-    generator.gruntfile.insertConfig('compass', JSON.stringify(compass));
+    gruntfile.insertConfig('compass', JSON.stringify(compass));
 };

@@ -1,7 +1,7 @@
 /*globals module */
 // ng-annotate tries to make the code safe for minification automatically
 // by using the Angular long form for dependency injection.
-module.exports = function (generator) {
+module.exports = function (gruntfile) {
     'use strict';
 
     var ngAnnotate = {};
@@ -15,5 +15,5 @@ module.exports = function (generator) {
         }]
     };
 
-    generator.gruntfile.insertConfig('ngAnnotate', JSON.stringify(ngAnnotate));
+    gruntfile.insertConfig('ngAnnotate', JSON.stringify(ngAnnotate));
 };

@@ -1,6 +1,6 @@
 /*globals module */
 // Copies remaining files to places other tasks can use
-module.exports = function (generator) {
+module.exports = function (gruntfile) {
     'use strict';
 
     var copy = {};
@@ -53,5 +53,5 @@ module.exports = function (generator) {
         src: '**/*.js'
     };
 
-    generator.gruntfile.insertConfig('copy', JSON.stringify(copy));
+    gruntfile.insertConfig('copy', JSON.stringify(copy));
 };

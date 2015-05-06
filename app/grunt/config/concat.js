@@ -1,5 +1,5 @@
 /*globals module */
-module.exports = function (generator) {
+module.exports = function (gruntfile) {
     'use strict';
 
     var concat = {};
@@ -9,5 +9,5 @@ module.exports = function (generator) {
         dest: '<%= yeoman.temp %>/concat/scripts/scripts.js',
     };
 
-    generator.gruntfile.insertConfig('concat', JSON.stringify(concat));
+    gruntfile.insertConfig('concat', JSON.stringify(concat));
 };

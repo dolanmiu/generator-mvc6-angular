@@ -1,5 +1,5 @@
 /*globals module */
-module.exports = function (generator) {
+module.exports = function (gruntfile) {
     'use strict';
 
     var imagemin = {};
@@ -13,5 +13,5 @@ module.exports = function (generator) {
         }]
     };
 
-    generator.gruntfile.insertConfig('imagemin', JSON.stringify(imagemin));
+    gruntfile.insertConfig('imagemin', JSON.stringify(imagemin));
 };

@@ -1,6 +1,6 @@
 /*globals module */
 // Performs rewrites based on filerev and the useminPrepare configuration
-module.exports = function (generator) {
+module.exports = function (gruntfile) {
     'use strict';
 
     var usemin = {};
@@ -17,5 +17,5 @@ module.exports = function (generator) {
         ]
     };
 
-    generator.gruntfile.insertConfig('usemin', JSON.stringify(usemin));
+    gruntfile.insertConfig('usemin', JSON.stringify(usemin));
 };

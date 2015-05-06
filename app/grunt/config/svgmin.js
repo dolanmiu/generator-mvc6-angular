@@ -1,5 +1,5 @@
 /*globals module */
-module.exports = function (generator) {
+module.exports = function (gruntfile) {
     'use strict';
 
     var svgmin = {};
@@ -13,5 +13,5 @@ module.exports = function (generator) {
         }]
     };
 
-    generator.gruntfile.insertConfig('svgmin', JSON.stringify(svgmin));
+    gruntfile.insertConfig('svgmin', JSON.stringify(svgmin));
 };
