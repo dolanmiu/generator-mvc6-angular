@@ -83,6 +83,8 @@ module.exports = yeoman.generators.Base.extend({
         this.installDependencies({
             callback: function () {
                     this.spawnCommand('grunt', ['build']);
+                            this.fs.move('Gruntfile.js', 'src/' + this.props.appName + '/Gruntfile.js');
+
                 }.bind(this) // bind the callback to the parent scope
         });
     }
