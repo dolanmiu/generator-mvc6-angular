@@ -31,12 +31,7 @@ var defaultTask = require('./grunt/task/default');
 var serveTask = require('./grunt/task/serve');
 
 exports.create = function (generator) {
-    /*generator.fs.copy(
-        generator.templatePath('src/_Gruntfile.js'),
-        generator.destinationPath('src/' + generator.props.appName + '/Gruntfile.js')
-    );*/
     var gruntfile = new GruntfileEditor();
-    
 
     gruntfile.prependJavaScript("require('jit-grunt')(grunt, {useminPrepare: 'grunt-usemin',ngtemplates: 'grunt-angular-templates',cdnify: 'grunt-google-cdn',injector: 'grunt-injector'});");
     gruntfile.prependJavaScript("require('time-grunt')(grunt);");
@@ -81,7 +76,4 @@ exports.create = function (generator) {
     //gruntfile.insertConfig('clean', "{dist: {files: [{dot: true,src: ['<%= yeoman.temp %>','<%= yeoman.dist %>/{,*/}*','!<%= yeoman.dist %>/.git{,*/}*']}]}}");
 
     //gruntfile.insertConfig('clean', "{server: '<%= yeoman.temp %>'}");
-    
-    //fs.copy('Gruntfile.js', 'src/' + generator.props.appName + '/Gruntfile.js');
-    //fs.rename('Gruntfile.js', 'src/' + generator.props.appName + '/Gruntfile.js');
 };
