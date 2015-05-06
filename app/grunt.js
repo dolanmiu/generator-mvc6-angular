@@ -1,6 +1,6 @@
 /*globals require, module */
 var exports = module.exports = {};
-var fs = require('fs');
+var GruntfileEditor = require('gruntfile-editor');
 
 var cleanConfig = require('./grunt/config/clean');
 var wiredepConfig = require('./grunt/config/wiredep');
@@ -35,49 +35,53 @@ exports.create = function (generator) {
         generator.templatePath('src/_Gruntfile.js'),
         generator.destinationPath('src/' + generator.props.appName + '/Gruntfile.js')
     );*/
+    var gruntfile = new GruntfileEditor();
+    
 
-    generator.gruntfile.prependJavaScript("require('jit-grunt')(grunt, {useminPrepare: 'grunt-usemin',ngtemplates: 'grunt-angular-templates',cdnify: 'grunt-google-cdn',injector: 'grunt-injector'});");
-    generator.gruntfile.prependJavaScript("require('time-grunt')(grunt);");
+    gruntfile.prependJavaScript("require('jit-grunt')(grunt, {useminPrepare: 'grunt-usemin',ngtemplates: 'grunt-angular-templates',cdnify: 'grunt-google-cdn',injector: 'grunt-injector'});");
+    gruntfile.prependJavaScript("require('time-grunt')(grunt);");
 
-    generator.gruntfile.insertVariable('appConfig', "{app: 'Client',dist: 'wwwroot',temp: '.tmp',title: require('./bower.json').appPath || 'app',};");
+    gruntfile.insertVariable('appConfig', "{app: 'Client',dist: 'wwwroot',temp: '.tmp',title: require('./bower.json').appPath || 'app',};");
 
-    generator.gruntfile.insertConfig('yeoman', 'appConfig');
+    gruntfile.insertConfig('yeoman', 'appConfig');
 
-    //generator.gruntfile.insertConfig('watch', "{scripts: {files: ['Scripts/**/*.js'],tasks: ['uglify']}}");
+    //gruntfile.insertConfig('watch', "{scripts: {files: ['Scripts/**/*.js'],tasks: ['uglify']}}");
 
 
-    cleanConfig(generator);
-    wiredepConfig(generator);
-    injectorConfig(generator);
-    ngAnnotateConfig(generator);
-    cdnifyConfig(generator);
-    compassConfig(generator);
+    cleanConfig(gruntfile);
+    wiredepConfig(gruntfile);
+    injectorConfig(gruntfile);
+    ngAnnotateConfig(gruntfile);
+    cdnifyConfig(gruntfile);
+    compassConfig(gruntfile);
     //sassConfig(generator);#
-    concatConfig(generator);
-    useminPrepareConfig(generator);
-    useminConfig(generator);
-    htmlminConfig(generator);
-    copyConfig(generator);
-    imageminConfig(generator);
-    svgminConfig(generator);
-    autoprefixerConfig(generator);
-    filerevConfig(generator);
-    ngtemplatesConfig(generator);
-    concurrentConfig(generator);
-    karmaConfig(generator);
-    watchConfig(generator);
-    connectConfig(generator);
-    jshintConfig(generator);
+    concatConfig(gruntfile);
+    useminPrepareConfig(gruntfile);
+    useminConfig(gruntfile);
+    htmlminConfig(gruntfile);
+    copyConfig(gruntfile);
+    imageminConfig(gruntfile);
+    svgminConfig(gruntfile);
+    autoprefixerConfig(gruntfile);
+    filerevConfig(gruntfile);
+    ngtemplatesConfig(gruntfile);
+    concurrentConfig(gruntfile);
+    karmaConfig(gruntfile);
+    watchConfig(gruntfile);
+    connectConfig(gruntfile);
+    jshintConfig(gruntfile);
     
-    buildTask(generator);
-    testTask(generator);
-    defaultTask(generator);
-    serveTask(generator);
+    buildTask(gruntfile);
+    testTask(gruntfile);
+    defaultTask(gruntfile);
+    serveTask(gruntfile);
     
-    //generator.gruntfile.insertConfig('clean', "{dist: {files: [{dot: true,src: ['<%= yeoman.temp %>','<%= yeoman.dist %>/{,*/}*','!<%= yeoman.dist %>/.git{,*/}*']}]}}");
+    generator.fs.write('src/' + generator.props.appName + '/Gruntfile.js', gruntfile.toString());
+    
+    //gruntfile.insertConfig('clean', "{dist: {files: [{dot: true,src: ['<%= yeoman.temp %>','<%= yeoman.dist %>/{,*/}*','!<%= yeoman.dist %>/.git{,*/}*']}]}}");
 
-    //generator.gruntfile.insertConfig('clean', "{server: '<%= yeoman.temp %>'}");
+    //gruntfile.insertConfig('clean', "{server: '<%= yeoman.temp %>'}");
     
-    //generator.fs.copy('Gruntfile.js', 'src/' + generator.props.appName + '/Gruntfile.js');
+    //fs.copy('Gruntfile.js', 'src/' + generator.props.appName + '/Gruntfile.js');
     //fs.rename('Gruntfile.js', 'src/' + generator.props.appName + '/Gruntfile.js');
 };
