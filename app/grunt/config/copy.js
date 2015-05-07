@@ -1,5 +1,6 @@
 /*globals module */
 // Copies remaining files to places other tasks can use
+var formatter = require('../formatter');
 module.exports = function (gruntfile) {
     'use strict';
 
@@ -53,5 +54,5 @@ module.exports = function (gruntfile) {
         src: '**/*.js'
     };
 
-    gruntfile.insertConfig('copy', JSON.stringify(copy));
+    gruntfile.insertConfig('copy', formatter(copy));
 };

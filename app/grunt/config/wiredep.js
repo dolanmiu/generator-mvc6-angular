@@ -1,5 +1,6 @@
 /*globals module */
 // Automatically inject Bower components into the app
+var formatter = require('../formatter');
 module.exports = function (gruntfile) {
     'use strict';
 
@@ -32,5 +33,5 @@ module.exports = function (gruntfile) {
         ignorePath: /(\.\.\/){1,2}bower_components\//
     };
 
-    gruntfile.insertConfig('wiredep', JSON.stringify(wiredep));
+    gruntfile.insertConfig('wiredep', formatter(wiredep));
 };

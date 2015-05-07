@@ -1,5 +1,6 @@
-/*globals module */
+/*globals module, require */
 // Empties folders to start fresh
+var formatter = require('../formatter');
 module.exports = function (gruntfile) {
     'use strict';
 
@@ -14,5 +15,5 @@ module.exports = function (gruntfile) {
 
     clean.server = '<%= yeoman.temp %>';
 
-    gruntfile.insertConfig('clean', JSON.stringify(clean));
+    gruntfile.insertConfig('clean', formatter(clean));
 };

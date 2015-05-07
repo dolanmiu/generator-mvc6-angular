@@ -1,4 +1,5 @@
 /*globals module */
+var formatter = require('../formatter');
 module.exports = function (gruntfile) {
     'use strict';
 
@@ -20,5 +21,5 @@ module.exports = function (gruntfile) {
         }]
     };
 
-    gruntfile.insertConfig('htmlmin', JSON.stringify(htmlmin));
+    gruntfile.insertConfig('htmlmin', formatter(htmlmin));
 };

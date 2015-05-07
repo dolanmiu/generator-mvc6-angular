@@ -1,4 +1,5 @@
 /*globals module */
+var formatter = require('../formatter');
 module.exports = function (gruntfile) {
     'use strict';
 
@@ -13,5 +14,5 @@ module.exports = function (gruntfile) {
         }]
     };
 
-    gruntfile.insertConfig('imagemin', JSON.stringify(imagemin));
+    gruntfile.insertConfig('imagemin', formatter(imagemin));
 };

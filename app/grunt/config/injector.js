@@ -1,4 +1,5 @@
 /*globals module */
+var formatter = require('../formatter');
 module.exports = function (gruntfile) {
     'use strict';
 
@@ -30,5 +31,5 @@ module.exports = function (gruntfile) {
         }]
     };
 
-    gruntfile.insertConfig('injector', JSON.stringify(injector));
+    gruntfile.insertConfig('injector', formatter(injector));
 };

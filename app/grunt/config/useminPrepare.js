@@ -2,6 +2,7 @@
 // Reads HTML for usemin blocks to enable smart builds that automatically
 // concat, minify and revision files. Creates configurations in memory so
 // additional tasks can operate on them
+var formatter = require('../formatter');
 module.exports = function (gruntfile) {
     'use strict';
 
@@ -22,5 +23,5 @@ module.exports = function (gruntfile) {
         }
     };
 
-    gruntfile.insertConfig('useminPrepare', JSON.stringify(useminPrepare));
+    gruntfile.insertConfig('useminPrepare', formatter(useminPrepare));
 };

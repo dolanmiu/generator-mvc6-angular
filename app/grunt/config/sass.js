@@ -1,4 +1,5 @@
 /*globals module */
+var formatter = require('../formatter');
 module.exports = function (gruntfile) {
     'use strict';
 
@@ -14,5 +15,5 @@ module.exports = function (gruntfile) {
         }
     };
 
-    gruntfile.insertConfig('sass', JSON.stringify(sass));
+    gruntfile.insertConfig('sass', formatter(sass));
 };

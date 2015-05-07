@@ -1,5 +1,6 @@
 /*globals module */
 // Test settings
+var formatter = require('../formatter');
 module.exports = function (gruntfile) {
     'use strict';
 
@@ -10,5 +11,5 @@ module.exports = function (gruntfile) {
         singleRun: true
     };
 
-    gruntfile.insertConfig('karma', JSON.stringify(karma));
+    gruntfile.insertConfig('karma', formatter(karma));
 };

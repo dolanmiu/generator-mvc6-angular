@@ -1,4 +1,5 @@
 /*globals module */
+var formatter = require('../formatter');
 module.exports = function (gruntfile) {
     'use strict';
 
@@ -9,5 +10,5 @@ module.exports = function (gruntfile) {
         dest: '<%= yeoman.temp %>/concat/scripts/scripts.js',
     };
 
-    gruntfile.insertConfig('concat', JSON.stringify(concat));
+    gruntfile.insertConfig('concat', formatter(concat));
 };

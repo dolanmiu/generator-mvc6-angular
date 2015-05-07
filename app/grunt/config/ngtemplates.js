@@ -1,4 +1,5 @@
 /*globals module */
+var formatter = require('../formatter');
 module.exports = function (gruntfile) {
     'use strict';
 
@@ -13,5 +14,5 @@ module.exports = function (gruntfile) {
         dest: '<%= yeoman.temp %>/templates.js'
     };
 
-    gruntfile.insertConfig('ngtemplates', JSON.stringify(ngtemplates));
+    gruntfile.insertConfig('ngtemplates', formatter(ngtemplates));
 };

@@ -1,5 +1,6 @@
 /*globals module, appConfig */
 // The actual grunt server settings
+var formatter = require('../formatter');
 module.exports = function (gruntfile) {
     'use strict';
 
@@ -56,5 +57,5 @@ module.exports = function (gruntfile) {
         }
     };
 
-    gruntfile.insertConfig('connect', JSON.stringify(connect));
+    gruntfile.insertConfig('connect', formatter(connect));
 };

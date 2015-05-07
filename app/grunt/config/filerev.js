@@ -1,5 +1,6 @@
 /*globals module */
 // Renames files for browser caching purposes
+var formatter = require('../formatter');
 module.exports = function (gruntfile) {
     'use strict';
 
@@ -14,5 +15,5 @@ module.exports = function (gruntfile) {
         ]
     };
 
-    gruntfile.insertConfig('filerev', JSON.stringify(filerev));
+    gruntfile.insertConfig('filerev', formatter(filerev));
 };

@@ -1,5 +1,6 @@
 /*globals module */
 // Add vendor prefixed styles
+var formatter = require('../formatter');
 module.exports = function (gruntfile) {
     'use strict';
 
@@ -30,5 +31,5 @@ module.exports = function (gruntfile) {
         }]
     };
 
-    gruntfile.insertConfig('autoprefixer', JSON.stringify(autoprefixer));
+    gruntfile.insertConfig('autoprefixer', formatter(autoprefixer));
 };

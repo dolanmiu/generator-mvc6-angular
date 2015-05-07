@@ -1,4 +1,5 @@
 /*globals module, require */
+var formatter = require('../formatter');
 module.exports = function (gruntfile) {
     'use strict';
 
@@ -18,7 +19,7 @@ module.exports = function (gruntfile) {
         src: ['test/spec/{,*/}*.js']
     };
 
-    gruntfile.insertConfig('jshint', JSON.stringify(jshint));
+    gruntfile.insertConfig('jshint', formatter(jshint));
     
     gruntfile.insertConfig('jshint', "{options: {jshintrc: '.jshintrc',reporter: require('jshint-stylish')}}");
 };

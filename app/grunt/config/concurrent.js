@@ -1,5 +1,6 @@
 /*globals module */
 // Run some tasks in parallel to speed up the build process
+var formatter = require('../formatter');
 module.exports = function (gruntfile) {
     'use strict';
 
@@ -15,5 +16,5 @@ module.exports = function (gruntfile) {
         'svgmin'
     ];
 
-    gruntfile.insertConfig('concurrent', JSON.stringify(concurrent));
+    gruntfile.insertConfig('concurrent', formatter(concurrent));
 };

@@ -1,5 +1,6 @@
 /*globals module */
 // Performs rewrites based on filerev and the useminPrepare configuration
+var formatter = require('../formatter');
 module.exports = function (gruntfile) {
     'use strict';
 
@@ -17,5 +18,5 @@ module.exports = function (gruntfile) {
         ]
     };
 
-    gruntfile.insertConfig('usemin', JSON.stringify(usemin));
+    gruntfile.insertConfig('usemin', formatter(usemin));
 };
