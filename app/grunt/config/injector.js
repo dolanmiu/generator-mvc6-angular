@@ -8,10 +8,7 @@ module.exports = function (gruntfile) {
     injector.options = {
         addRootSlash: false,
         destFile: '<%= yeoman.app %>/index.html',
-        transform: function (filepath, index, length) {
-            filepath = filepath.replace('Client/', '');
-            return '<script src="' + filepath + '"></script>';
-        },
+        transform: 'function (filepath, index, length) {filepath = filepath.replace("Client/", "");return "<script src=\"" + filepath + "\"></script>";}',
         lineEnding: '\r\n',
         sort: function (a, b) {
             if (a.length > b.length) {
