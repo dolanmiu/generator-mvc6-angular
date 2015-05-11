@@ -4,7 +4,7 @@
 
 Sorry everyone who has downloaded this recently, I was just testing publishing it to npm (my first npm release), so there are some issues! I will releasing very frequent updates!
 
-**Note: You need to have Visual Studio 2015 installed. It is currently in Preview and is [free here](https://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx). [Visual Studio 2013 does not support MVC 6](http://stackoverflow.com/questions/24259598/is-it-possible-to-use-asp-net-mvc-6-in-visual-studio-2013), unless you find a way to open [vNext .kpoj](http://stackoverflow.com/questions/27004639/cant-open-kproj-projects-in-vs-net-2013-update-4) files.**
+**Note: You need to have Visual Studio 2015 installed. It is currently in RC and is [free here](https://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx). [Visual Studio 2013 does not support MVC 6](http://stackoverflow.com/questions/24259598/is-it-possible-to-use-asp-net-mvc-6-in-visual-studio-2013), unless you find a way to open [vNext .kpoj](http://stackoverflow.com/questions/27004639/cant-open-kproj-projects-in-vs-net-2013-update-4) files.**
 
 # Getting Started
 ```bash
