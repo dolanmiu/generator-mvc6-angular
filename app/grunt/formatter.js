@@ -1,5 +1,4 @@
 /*globals module */
-var UglifyJS = require('uglify-js');
 
 /*function stringifyFunctions(obj) {
     for (var property in obj) {
@@ -28,7 +27,7 @@ module.exports = function (jsonObject) {
     'use strict';
     //stringifyFunctions(jsonObject);
     var output = JSON.stringify(jsonObject);
-    //output = output.replace(/\"([^"]+)\":/g, "$1:");
+    output = output.replace(/\"([^"]+)\":/g, "$1:");
     //output = output.replace(/'(function \([^\)]+\) [^}]+})'/g, '$1');
     return output;
 };

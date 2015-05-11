@@ -1,6 +1,7 @@
 /*globals require, module */
 var exports = module.exports = {};
 var GruntfileEditor = require('gruntfile-editor');
+var fs = require('fs');
 
 var cleanConfig = require('./grunt/config/clean');
 var wiredepConfig = require('./grunt/config/wiredep');
@@ -31,7 +32,7 @@ var defaultTask = require('./grunt/task/default');
 var serveTask = require('./grunt/task/serve');
 
 exports.create = function (generator) {
-    var gruntfile = new GruntfileEditor();
+    var gruntfile = new GruntfileEditor(fs.readFileSync(generator.templatePath('src/_blankGruntfile.js')));
 
     gruntfile.prependJavaScript("require('jit-grunt')(grunt, {useminPrepare: 'grunt-usemin',ngtemplates: 'grunt-angular-templates',cdnify: 'grunt-google-cdn',injector: 'grunt-injector'});");
     gruntfile.prependJavaScript("require('time-grunt')(grunt);");
@@ -65,14 +66,14 @@ exports.create = function (generator) {
     watchConfig(gruntfile);
     connectConfig(gruntfile);
     jshintConfig(gruntfile);
-    
+
     buildTask(gruntfile);
     testTask(gruntfile);
     defaultTask(gruntfile);
     serveTask(gruntfile);
-    
+
     generator.fs.write('src/' + generator.props.appName + '/Gruntfile.js', gruntfile.toString());
-    
+
     //gruntfile.insertConfig('clean', "{dist: {files: [{dot: true,src: ['<%= yeoman.temp %>','<%= yeoman.dist %>/{,*/}*','!<%= yeoman.dist %>/.git{,*/}*']}]}}");
 
     //gruntfile.insertConfig('clean', "{server: '<%= yeoman.temp %>'}");

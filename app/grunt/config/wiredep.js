@@ -1,4 +1,5 @@
 /*globals module */
+// NOW INCLUDED IN STARTING TEMPALTE. It had problems reading: ignorePath: /\.\.\//
 // Automatically inject Bower components into the app
 var formatter = require('../formatter');
 module.exports = function (gruntfile) {
@@ -33,5 +34,5 @@ module.exports = function (gruntfile) {
         ignorePath: /(\.\.\/){1,2}bower_components\//
     };
 
-    gruntfile.insertConfig('wiredep', formatter(wiredep));
+    //gruntfile.insertConfig('wiredep', formatter(wiredep));
 };
