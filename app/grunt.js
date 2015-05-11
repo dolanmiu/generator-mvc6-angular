@@ -45,8 +45,8 @@ exports.create = function (generator) {
 
 
     cleanConfig(gruntfile);
-    wiredepConfig(gruntfile);
-    injectorConfig(gruntfile);
+    //wiredepConfig(gruntfile);
+    //injectorConfig(gruntfile);
     ngAnnotateConfig(gruntfile);
     cdnifyConfig(gruntfile);
     compassConfig(gruntfile);

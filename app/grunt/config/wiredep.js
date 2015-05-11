@@ -34,5 +34,5 @@ module.exports = function (gruntfile) {
         ignorePath: /(\.\.\/){1,2}bower_components\//
     };
 
-    //gruntfile.insertConfig('wiredep', formatter(wiredep));
+    gruntfile.insertConfig('wiredep', formatter(wiredep));
 };

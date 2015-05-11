@@ -31,5 +31,5 @@ module.exports = function (gruntfile) {
     
     var injectorString = "{options: {addRootSlash: false,destFile: '<%= yeoman.app %>/index.html',transform: function (filepath, index, length) {filepath = filepath.replace('Client/', '');},lineEnding: '\r\n',sort: function (a, b) {if (a.length > b.length) {return 1;} else {return -1;}}},dist: {files: [{expand: true,cwd: '<%= yeoman.app %>',src: ['**/*.js', '**/*.css'],dest: '<%= yeoman.app %>'}]}};"
 
-    //gruntfile.insertConfig('injector', injectorString);
+    gruntfile.insertConfig('injector', injectorString);
 };
