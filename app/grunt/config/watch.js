@@ -12,8 +12,8 @@ module.exports = function (gruntfile) {
     };
 
     watch.js = {
-        files: ['<%= yeoman.app %>/Scripts/{,*/}*.js'],
-        tasks: ['newer:jshint:all'],
+        files: ['<%= yeoman.app %>/{,*/}*.js'],
+        tasks: ['newer:jshint:all', 'injector:dist'],
         options: {
             livereload: '<%= connect.options.livereload %>'
         }

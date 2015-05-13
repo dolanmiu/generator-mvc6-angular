@@ -5,9 +5,10 @@ module.exports = function (gruntfile) {
     var serve = [
         'clean:server',
         'wiredep',
+        'injector:dist',
         'concurrent:server',
         'autoprefixer:server',
-        'connect:livereload',
+        //'connect:livereload',
         'watch'
     ];
 
