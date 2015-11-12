@@ -2,7 +2,13 @@
 
 > [Yeoman](http://yeoman.io) generator
 
-**Note: You need to have Visual Studio 2015 installed. It is currently in RC and is [free here](https://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx). [Visual Studio 2013 does not support MVC 6](http://stackoverflow.com/questions/24259598/is-it-possible-to-use-asp-net-mvc-6-in-visual-studio-2013), unless you find a way to open [vNext .kpoj](http://stackoverflow.com/questions/27004639/cant-open-kproj-projects-in-vs-net-2013-update-4) files.**
+**Note: You need to have Visual Studio 2015 installed. The Community version can be downloaded for [free here](https://www.visualstudio.com/en-us/downloads/visual-studio-2015-downloads-vs.aspx). [Visual Studio 2013 does not support MVC 6](http://stackoverflow.com/questions/24259598/is-it-possible-to-use-asp-net-mvc-6-in-visual-studio-2013), unless you find a way to open [vNext .kpoj](http://stackoverflow.com/questions/27004639/cant-open-kproj-projects-in-vs-net-2013-update-4) files.**
+
+**Note: vNext ```.kproj``` files are now depreciated in favour of ```.xproj```, and now Visual Studio 2015 has the option to open the ```project.json``` file which will generate a ```.xproj file```. Therefore I have removed all ```.kproj and``` ```.xproj``` in favour of generating the ```.xproj``` yourself from the ```project.json```**
+
+![](http://i65.tinypic.com/e704r9.png)
+
+**Note: You may need PowerShell 3.0+ on Windows 7. [Click here](http://stackoverflow.com/questions/31546274/how-to-fix-dnx-dnvm-in-visual-studio-2015) to learn more**
 
 # Getting Started
 ```bash
