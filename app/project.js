@@ -1,4 +1,4 @@
-/*globals module */
+/*jslint node: true */
 var exports = module.exports = {};
 
 exports.create = function (generator) {
@@ -33,11 +33,11 @@ exports.create = function (generator) {
             srcGuid: generator.guids.src
         }
     );*/
-    generator.fs.copyTpl(
+    /*generator.fs.copyTpl(
         generator.templatePath('src/_Project.kproj'),
         generator.destinationPath('src/' + generator.props.appName + '/' + generator.props.appName + '.kproj'), {
             title: generator.props.appName,
             guid: generator.guids.project,
         }
-    );
+    );*/
 };
