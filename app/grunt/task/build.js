@@ -23,5 +23,19 @@ module.exports = function (gruntfile) {
         'clean:server'
     ];
 
+    var buildDev = [
+        'clean:dist',
+        'wiredep',
+        'injector:dist',
+        'concurrent:dist',
+        'autoprefixer',
+        'copy:dist',
+        'copy:bower',
+        'copy:app',
+        'copy:styles',
+        'clean:server'
+    ];
+
     gruntfile.registerTask('build', build);
+    gruntfile.registerTask('build-dev', buildDev);
 };
