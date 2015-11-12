@@ -1,4 +1,4 @@
-/*globals module */
+/*jslint node: true */
 
 /*function stringifyFunctions(obj) {
     for (var property in obj) {

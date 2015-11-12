@@ -1,8 +1,11 @@
-/*globals module, appConfig */
+/*jslint node: true, es5: true */
+/*globals appConfig */
+'use strict';
+
 // The actual grunt server settings
 var formatter = require('../formatter');
+
 module.exports = function (gruntfile) {
-    'use strict';
 
     var connect = {};
 

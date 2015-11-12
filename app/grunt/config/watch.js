@@ -1,4 +1,4 @@
-/*globals module */
+/*jslint node: true */
 // Watches files for changes and runs tasks based on the changed files
 var formatter = require('../formatter');
 module.exports = function (gruntfile) {

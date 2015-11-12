@@ -1,9 +1,10 @@
-/*globals module */
+/*jslint node: true */
+'use strict';
+
 // Add vendor prefixed styles
 var formatter = require('../formatter');
-module.exports = function (gruntfile) {
-    'use strict';
 
+module.exports = function (gruntfile) {
     var autoprefixer = {};
 
     autoprefixer.options = {

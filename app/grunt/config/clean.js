@@ -1,8 +1,10 @@
-/*globals module, require */
+/*jslint node: true */
+'use strict';
+
 // Empties folders to start fresh
 var formatter = require('../formatter');
+
 module.exports = function (gruntfile) {
-    'use strict';
 
     var clean = {};
 

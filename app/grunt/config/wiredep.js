@@ -1,4 +1,4 @@
-/*globals module */
+/*jslint node: true */
 // NOW INCLUDED IN STARTING TEMPALTE. It had problems reading: ignorePath: /\.\.\//
 // Automatically inject Bower components into the app
 var formatter = require('../formatter');

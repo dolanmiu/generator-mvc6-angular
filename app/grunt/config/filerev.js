@@ -1,8 +1,10 @@
-/*globals module */
+/*jslint node: true */
+'use strict';
+
 // Renames files for browser caching purposes
 var formatter = require('../formatter');
+
 module.exports = function (gruntfile) {
-    'use strict';
 
     var filerev = {};
 

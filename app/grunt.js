@@ -1,4 +1,6 @@
-/*globals require, module */
+/*jslint node: true */
+'use strict';
+
 var exports = module.exports = {};
 var GruntfileEditor = require('gruntfile-editor');
 var fs = require('fs');

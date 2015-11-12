@@ -1,8 +1,10 @@
-/*globals module */
+/*jslint node: true */
+'use strict';
+
 // Copies remaining files to places other tasks can use
 var formatter = require('../formatter');
+
 module.exports = function (gruntfile) {
-    'use strict';
 
     var copy = {};
 

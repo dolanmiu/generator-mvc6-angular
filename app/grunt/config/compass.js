@@ -1,8 +1,10 @@
-/*globals module */
+/*jslint node: true */
+'use strict';
+
 // Compiles Sass to CSS and generates necessary files if requested
 var formatter = require('../formatter');
+
 module.exports = function (gruntfile) {
-    'use strict';
 
     var compass = {};
 

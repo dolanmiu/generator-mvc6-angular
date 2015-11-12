@@ -1,4 +1,4 @@
-/*globals module */
+/*jslint node: true */
 // Test settings
 var formatter = require('../formatter');
 module.exports = function (gruntfile) {

@@ -1,4 +1,4 @@
-/*globals module */
+/*jslint node: true */
 // ng-annotate tries to make the code safe for minification automatically
 // by using the Angular long form for dependency injection.
 var formatter = require('../formatter');

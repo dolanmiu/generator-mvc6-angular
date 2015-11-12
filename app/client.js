@@ -1,4 +1,6 @@
-/*globals module */
+/*jslint node: true */
+'use strict';
+
 var exports = module.exports = {};
 
 exports.create = function (generator) {

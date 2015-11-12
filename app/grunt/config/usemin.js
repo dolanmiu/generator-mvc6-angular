@@ -1,4 +1,4 @@
-/*globals module */
+/*jslint node: true */
 // Performs rewrites based on filerev and the useminPrepare configuration
 var formatter = require('../formatter');
 module.exports = function (gruntfile) {

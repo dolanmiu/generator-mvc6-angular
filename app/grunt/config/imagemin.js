@@ -1,7 +1,9 @@
-/*globals module */
+/*jslint node: true */
+'use strict';
+
 var formatter = require('../formatter');
+
 module.exports = function (gruntfile) {
-    'use strict';
 
     var imagemin = {};
 

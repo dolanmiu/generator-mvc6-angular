@@ -1,8 +1,10 @@
-/*globals module */
+/*jslint node: true */
+'use strict';
+
 // Replace Google CDN references
 var formatter = require('../formatter');
+
 module.exports = function (gruntfile) {
-    'use strict';
 
     var cdnify = {};
 
