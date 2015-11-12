@@ -8,7 +8,7 @@ module.exports = function (gruntfile) {
         'injector:dist',
         'ngtemplates',
         'concurrent:server',
-        'copy:dist'
+        'copy:dist',
         'autoprefixer:server',
         //'connect:livereload',
         'watch'
